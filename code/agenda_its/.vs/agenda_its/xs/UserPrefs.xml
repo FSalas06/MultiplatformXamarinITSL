@@ -1,0 +1,20 @@
+﻿<Properties StartupConfiguration="{251234E9-BBF8-4DCF-8029-7206A0F7C497}|Default">
+  <MonoDevelop.Ide.ItemProperties.agenda__its.iOS FirstBuild="True" />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="agenda_its" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.agenda__its FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.agenda__its.Android FirstBuild="True" PreferredExecutionTarget="Android.a11xl" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
