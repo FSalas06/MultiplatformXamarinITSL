@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UnitTestDemo.Views.MainView"
+             xmlns:views="clr-namespace:UnitTestDemo.Views"
+             xmlns:helpers="clr-namespace:UnitTestDemo.Utilities.Helpers;assembly=UnitTestDemo"
+             helpers:ViewModelLocator.AutoWireViewModel="True"
+             Title="Bethany's Pie Shop"
+             MasterBehavior="Popover">
+    <MasterDetailPage.Master>
+        <views:MenuView BindingContext="{Binding MenuViewModel}" />
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <ContentPage></ContentPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>
