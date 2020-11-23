@@ -3,6 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="agenda_its.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <Style TargetType="ContentPage" x:Key="BaseContentPage">
+                <Setter Property="BackgroundColor" Value="Gray"/>
+            </Style>
+            <Style TargetType="ListView">
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

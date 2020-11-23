@@ -1,33 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="UnitTestDemo.Views.HomeView"
-             xmlns:behaviors="clr-namespace:UnitTestDemo.Utilities.Behaviors;assembly=UnitTestDemo"   
-             xmlns:helpers="clr-namespace:UnitTestDemo.Utilities.Helpers;assembly=UnitTestDemo"
-             helpers:ViewModelLocator.AutoWireViewModel="True"
-             Title="Welcome" BackgroundImage="darktexture.jpg" 
-             x:Name="HomeViewPage">
+<ContentPage
+    x:Class="UnitTestDemo.Views.HomeView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:behaviors="clr-namespace:UnitTestDemo.Utilities.Behaviors;assembly=UnitTestDemo"
+    xmlns:helpers="clr-namespace:UnitTestDemo.Utilities.Helpers;assembly=UnitTestDemo"
+    x:Name="HomeViewPage"
+    Title="Welcome"
+    helpers:ViewModelLocator.AutoWireViewModel="True"
+    BackgroundImage="darktexture.jpg">
     <Grid>
-        <ListView VerticalOptions="FillAndExpand" Header="{Binding .}" Footer="{Binding .}" ItemsSource="{Binding PiesOfTheWeek}" CachingStrategy="RecycleElement"
-            SeparatorVisibility="None" 
-                  
-            HasUnevenRows="True">
+        <ListView
+            CachingStrategy="RecycleElement"
+            Footer="{Binding .}"
+            HasUnevenRows="True"
+            Header="{Binding .}"
+            ItemsSource="{Binding PiesOfTheWeek}"
+            SeparatorVisibility="None"
+            VerticalOptions="FillAndExpand">
             <ListView.Behaviors>
-                <behaviors:EventToCommandBehavior EventName="ItemTapped" Command="{Binding PieTappedCommand}" 
-                                                  EventArgsConverter="{StaticResource LocalItemTappedConverter}" >
-                </behaviors:EventToCommandBehavior>
+                <behaviors:EventToCommandBehavior
+                    Command="{Binding PieTappedCommand}"
+                    EventArgsConverter="{StaticResource LocalItemTappedConverter}"
+                    EventName="ItemTapped" />
             </ListView.Behaviors>
             <ListView.HeaderTemplate>
                 <DataTemplate>
                     <Grid>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="8*"></RowDefinition>
-                            <RowDefinition Height="2*"></RowDefinition>
+                            <RowDefinition Height="8*" />
+                            <RowDefinition Height="2*" />
                         </Grid.RowDefinitions>
-                        <Image HeightRequest="200" Grid.Row="0" Source="header1.jpg" Aspect="AspectFill"></Image>
+                        <Image
+                            Grid.Row="0"
+                            Aspect="AspectFill"
+                            HeightRequest="200"
+                            Source="header1.jpg" />
                         <StackLayout Grid.Row="1">
-                            <Label Text="PIES OF THE WEEK" Style="{StaticResource PageHeaderStyle}" HorizontalOptions="CenterAndExpand"></Label>
-                            <Label Text="Our weekly selection" Style="{StaticResource RegularStyle}" HorizontalOptions="CenterAndExpand"></Label>
+                            <Label
+                                HorizontalOptions="CenterAndExpand"
+                                Style="{StaticResource PageHeaderStyle}"
+                                Text="PIES OF THE WEEK" />
+                            <Label
+                                HorizontalOptions="CenterAndExpand"
+                                Style="{StaticResource RegularStyle}"
+                                Text="Our weekly selection" />
                         </StackLayout>
                     </Grid>
                 </DataTemplate>
@@ -35,23 +52,57 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <Frame Margin="10" Padding="10" HeightRequest="200" >
-                            <Grid Margin="1" BackgroundColor="White" RowSpacing="0" HeightRequest="200" >
+                        <Frame
+                            Margin="10"
+                            Padding="10"
+                            HeightRequest="200">
+                            <Grid
+                                Margin="1"
+                                BackgroundColor="White"
+                                HeightRequest="200"
+                                RowSpacing="0">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="6*"></RowDefinition>
-                                    <RowDefinition Height="1*"></RowDefinition>
-                                    <RowDefinition Height="1*"></RowDefinition>
-                                    <RowDefinition Height="2*"></RowDefinition>
+                                    <RowDefinition Height="6*" />
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition Height="2*" />
                                 </Grid.RowDefinitions>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition></ColumnDefinition>
-                                    <ColumnDefinition></ColumnDefinition>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
-                                <Image Grid.Row="0" Grid.ColumnSpan="2" Aspect="AspectFill" Source="{Binding ImageUrl}" HeightRequest="100" WidthRequest="100"></Image>
-                                <Label Grid.Row="1" Grid.Column="0" Text="{Binding Name}" Style="{StaticResource PieTileNameStyle}"></Label>
-                                <Label Grid.Row="1" Grid.Column="1"  Text="{Binding Price, Converter={StaticResource LocalCurrencyConverter}}" Style="{StaticResource PieTilePriceStyle}" HorizontalTextAlignment="End"></Label>
-                                <Label Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Text="{Binding ShortDescription}" Style="{StaticResource PieTileDescriptionStyle}"></Label>
-                                <Button Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" Text="Add to cart" Style="{StaticResource RegularButton}" Command="{Binding Source={x:Reference HomeViewPage}, Path=BindingContext.AddToCartCommand}" CommandParameter="{Binding}"></Button>
+                                <Image
+                                    Grid.Row="0"
+                                    Grid.ColumnSpan="2"
+                                    Aspect="AspectFill"
+                                    HeightRequest="100"
+                                    Source="{Binding ImageUrl}"
+                                    WidthRequest="100" />
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="0"
+                                    Style="{StaticResource PieTileNameStyle}"
+                                    Text="{Binding Name}" />
+                                <Label
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    HorizontalTextAlignment="End"
+                                    Style="{StaticResource PieTilePriceStyle}"
+                                    Text="{Binding Price, Converter={StaticResource LocalCurrencyConverter}}" />
+                                <Label
+                                    Grid.Row="2"
+                                    Grid.Column="0"
+                                    Grid.ColumnSpan="2"
+                                    Style="{StaticResource PieTileDescriptionStyle}"
+                                    Text="{Binding ShortDescription}" />
+                                <Button
+                                    Grid.Row="3"
+                                    Grid.Column="0"
+                                    Grid.ColumnSpan="2"
+                                    Command="{Binding Source={x:Reference HomeViewPage}, Path=BindingContext.AddToCartCommand}"
+                                    CommandParameter="{Binding}"
+                                    Style="{StaticResource RegularButton}"
+                                    Text="Add to cart" />
                             </Grid>
                         </Frame>
                     </ViewCell>
@@ -59,22 +110,32 @@
             </ListView.ItemTemplate>
             <ListView.FooterTemplate>
                 <DataTemplate>
-                    <Grid RowSpacing="0"
-                          HeightRequest="250">
+                    <Grid HeightRequest="250" RowSpacing="0">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="7*"></RowDefinition>
-                            <RowDefinition Height="2*"></RowDefinition>
+                            <RowDefinition Height="7*" />
+                            <RowDefinition Height="2*" />
                         </Grid.RowDefinitions>
                         <Grid BackgroundColor="White">
-                            <Image VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Aspect="Fill" Source="springsale.jpg" ></Image>
+                            <Image
+                                Aspect="Fill"
+                                HorizontalOptions="CenterAndExpand"
+                                Source="springsale.jpg"
+                                VerticalOptions="CenterAndExpand" />
                         </Grid>
                         <Grid Grid.Row="1">
-                            <Image Source="patternwide.png" HeightRequest="50" Aspect="Fill"></Image>
-                            <Label Text="© 2018 Bethany's Pie Shop" HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource RegularStyle}"></Label>
+                            <Image
+                                Aspect="Fill"
+                                HeightRequest="50"
+                                Source="patternwide.png" />
+                            <Label
+                                HorizontalOptions="Center"
+                                Style="{StaticResource RegularStyle}"
+                                Text="© 2018 Bethany's Pie Shop"
+                                VerticalOptions="Center" />
                         </Grid>
                     </Grid>
                 </DataTemplate>
             </ListView.FooterTemplate>
         </ListView>
-        </Grid>
+    </Grid>
 </ContentPage>

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="agenda_its.Views.MainView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converter="clr-namespace:agenda_its.Utilities"
+    Style="{StaticResource BaseContentPage}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:TypeColorConverter x:Key="typecolorconverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <NavigationPage.TitleView>
+        <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+            <Label
+                CharacterSpacing="10"
+                FontAttributes="Bold"
+                FontSize="Title"
+                HorizontalTextAlignment="Center"
+                Text="POKEDEX"
+                TextColor="White"
+                TextDecorations="Underline"
+                VerticalTextAlignment="Center" />
+            <Image
+                HeightRequest="60"
+                HorizontalOptions="EndAndExpand"
+                Source="AddPokemon.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NewPokemonCommand}" NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="Transparent" VerticalOptions="FillAndExpand">
+            <ListView
+                Margin="10"
+                BackgroundColor="Transparent"
+                HasUnevenRows="True"
+                ItemsSource="{Binding PokemonList}"
+                SelectedItem="{Binding PokemonSelected}"
+                SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame Padding="10" BackgroundColor="{Binding TypePokemon, Converter={StaticResource typecolorconverter}}">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image HeightRequest="60" Source="Pikachu.png" />
+                                    <Label
+                                        Grid.Row="0"
+                                        Grid.Column="1"
+                                        FontSize="Large"
+                                        Text="{Binding ComposedName}"
+                                        VerticalTextAlignment="Center" />
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

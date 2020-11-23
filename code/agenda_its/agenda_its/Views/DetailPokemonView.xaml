@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="agenda_its.Views.DetailPokemonView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converter="clr-namespace:agenda_its.Utilities"
+    Style="{StaticResource BaseContentPage}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:TypeColorConverter x:Key="typecolorconverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Margin="10">
+            <Frame BackgroundColor="{Binding Pokemon.TypePokemon, Converter={StaticResource typecolorconverter}}">
+                <StackLayout>
+                    <Image HeightRequest="200" Source="Pikachu.png" />
+                    <Label
+                        CharacterSpacing="10"
+                        FontSize="Large"
+                        HorizontalTextAlignment="Center"
+                        Text="{Binding Pokemon.ComposedName}"
+                        TextTransform="Uppercase" />
+                </StackLayout>
+            </Frame>
+            <Frame BackgroundColor="{Binding Pokemon.TypePokemon, Converter={StaticResource typecolorconverter}}">
+                <Label FontAttributes="Italic" Text="{Binding Pokemon.Description}" />
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

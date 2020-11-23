@@ -1,9 +1,35 @@
-﻿<Properties StartupConfiguration="{251234E9-BBF8-4DCF-8029-7206A0F7C497}|Default">
-  <MonoDevelop.Ide.Workbench>
+﻿<Properties HasIOSDesignerOverlayBeenDismissed="True" StartupConfiguration="{95E6D559-5DCB-4722-A880-FCF54A43999A}|Default" HasHotReloadOverlayBeenDismissed="True">
+  <MonoDevelop.Ide.ItemProperties.agenda__its.iOS TriggeredFromHotReload="False" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.BB6A9F97-F35E-4B22-A2EB-F4EA761730DD" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="agenda_its/ViewModels/AddPokemonViewModel.cs">
+    <Files>
+      <File FileName="agenda_its/ViewModels/AddPokemonViewModel.cs" Line="96" Column="10" />
+      <File FileName="agenda_its/ViewModels/BaseViewmodel.cs" Line="28" Column="31" />
+      <File FileName="agenda_its/Views/AddPokemonView.xaml.cs" Line="1" Column="1" />
+      <File FileName="agenda_its/ViewModels/MainViewModel.cs" Line="50" Column="15" />
+      <File FileName="agenda_its/Database/PokeDataBase.cs" Line="51" Column="1" />
+      <File FileName="agenda_its/Views/AddPokemonView.xaml" Line="31" Column="37" />
+      <File FileName="agenda_its/Utilities/TypeColorConverter.cs" Line="29" Column="41" />
+      <File FileName="agenda_its.iOS/Main.cs" Line="17" Column="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="agenda_its" expanded="True" selected="True" />
+          <Node name="agenda_its" expanded="True">
+            <Node name="agenda_its" expanded="True">
+              <Node name="Database" expanded="True" />
+              <Node name="Utilities" expanded="True" />
+              <Node name="ViewModels" expanded="True">
+                <Node name="AddPokemonViewModel.cs" selected="True" />
+              </Node>
+              <Node name="Views" expanded="True" />
+            </Node>
+            <Node name="agenda_its.iOS" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State>
+          <Value>PokemonList</Value>
         </State>
       </Pad>
     </Pads>
@@ -12,7 +38,9 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/salas/Documents/GitHub/ITSL/MultiplatformXamarinITSL/code/agenda_its/agenda_its/Utilities/MultiTriggerConverter.cs" relfile="agenda_its/Utilities/MultiTriggerConverter.cs" line="11" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

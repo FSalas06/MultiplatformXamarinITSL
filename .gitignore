@@ -10,6 +10,10 @@ code/agenda_its/.vs/agenda_its/xs/project-cache/agenda_its-Debug.json
 code/agenda_its/.vs/agenda_its/xs/project-cache/agenda_its.Android-Debug.json
 code/agenda_its/.vs/agenda_its/xs/project-cache/agenda_its.iOS-Debug|iPhoneSimulator.json
 code/agenda_its/.vs/agenda_its/xs/UserPrefs.xml
+code/agenda_its/agenda_its.Android/bin/*
+code/agenda_its/agenda_its.Android/obj/*
+[Bb]in/
+[Oo]bj/
 code/agenda_its/agenda_its.Android/bin/Debug/agenda_its.Android.dll
 code/agenda_its/agenda_its.Android/bin/Debug/agenda_its.Android.pdb
 code/agenda_its/agenda_its.Android/bin/Debug/agenda_its.dll
@@ -5049,3 +5053,6 @@ code/Baseapp/UnitTestDemo/obj/project.nuget.cache
 code/Baseapp/UnitTestDemo/obj/UnitTestDemo.csproj.nuget.dgspec.json
 code/Baseapp/UnitTestDemo/obj/UnitTestDemo.csproj.nuget.g.props
 code/Baseapp/UnitTestDemo/obj/UnitTestDemo.csproj.nuget.g.targets
+code/Baseapp/UnitTestDemo.Android/Resources/Resource.designer.cs
+code/agenda_its/.vs/agenda_its/xs/UserPrefs.xml
+code/agenda_its/agenda_its.Android/obj/Debug/android/assets/Acr.UserDialogs.dll

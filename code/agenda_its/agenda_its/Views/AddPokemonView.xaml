@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="agenda_its.Views.AddPokemonView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converter="clr-namespace:agenda_its.Utilities">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:MultiTriggerConverter x:Key="dataHasBeenEntered" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout
+            Padding="20"
+            Spacing="20"
+            VerticalOptions="FillAndExpand">
+            <Entry
+                x:Name="nmb"
+                Keyboard="Numeric"
+                Placeholder="Number"
+                Text="{Binding Number}" />
+            <Entry
+                x:Name="nam"
+                Placeholder="Name"
+                Text="{Binding Name}" />
+            <Picker ItemsSource="{Binding TypeSource}" SelectedItem="{Binding TypePokemon}" />
+            <Button
+                BackgroundColor="DarkRed"
+                Command="{Binding AddPokemonCommand}"
+                IsEnabled="False"
+                Text="Save Pokemon">
+                <Button.Triggers>
+                    <MultiTrigger TargetType="Button">
+                        <MultiTrigger.Conditions>
+                            <BindingCondition Binding="{Binding Source={x:Reference nmb}, Path=Text.Length, Converter={StaticResource dataHasBeenEntered}}" />
+                            <BindingCondition Binding="{Binding Source={x:Reference nam}, Path=Text.Length, Converter={StaticResource dataHasBeenEntered}}" />
+                        </MultiTrigger.Conditions>
+                        <Setter Property="IsEnabled" Value="True" />
+                    </MultiTrigger>
+                </Button.Triggers>
+
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

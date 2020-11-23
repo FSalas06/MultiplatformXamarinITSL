@@ -64,23 +64,24 @@ namespace UnitTestDemo.Mocks.Services
         public async Task<IEnumerable<Pie>> GetPiesOfTheWeekAsync()
         {
             await Task.Delay(500);
-            var pieList = new List<Pie>();
-
-            pieList.Add(new Pie
+            var pieList = new List<Pie>
             {
-                ShortDescription = "Strawberry pie",
-                LongDescription = "Delicious strawberry pie",
-                Price = 50,
-                Name = "Strawberry pie"                
-            });
+                new Pie
+                {
+                    ShortDescription = "Strawberry pie",
+                    LongDescription = "Delicious strawberry pie",
+                    Price = 50,
+                    Name = "Strawberry pie",
+                },
 
-            pieList.Add(new Pie
-            {
-                ShortDescription = "Apple pie",
-                LongDescription = "Delicious apple pie",
-                Price = 60,
-                Name = "Apple pie"                
-            });
+                new Pie
+                {
+                    ShortDescription = "Apple pie",
+                    LongDescription = "Delicious apple pie",
+                    Price = 60,
+                    Name = "Apple pie"
+                }
+            };
 
             return pieList;
         }
